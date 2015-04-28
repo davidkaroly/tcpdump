@@ -1174,7 +1174,7 @@ AC_DEFUN(AC_LBL_LIBRARY_NET, [
 	AC_CHECK_LIB(socket, gethostbyname,
                      LIBS="-lsocket -lnsl $LIBS", , -lnsl)
     fi
-    AC_SEARCH_LIBS(socket, socket, ,
+    AC_SEARCH_LIBS(socket, socket network, ,
 	AC_CHECK_LIB(socket, socket, LIBS="-lsocket -lnsl $LIBS", , -lnsl))
     # DLPI needs putmsg under HPUX so test for -lstr while we're at it
     AC_SEARCH_LIBS(putmsg, str)
